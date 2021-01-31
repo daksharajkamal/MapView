@@ -7,9 +7,7 @@ import Hamburger from "../components/Hamburger";
 import Bottom from "../components/Bottom";
 
 class MapScreen extends Component {
-  constructor(props) {
-    super(props);
-  }
+  
   render() {
     return (
       <View style={styles.container}>

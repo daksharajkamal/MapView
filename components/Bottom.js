@@ -1,8 +1,10 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import BottomSheet from "reanimated-bottom-sheet";
+import { useNavigation } from "@react-navigation/native";
 
-function Bottom({ navigation }) {
+const Bottom = () => {
+  const navigation = useNavigation();
   const renderContent = () => (
     <View
       style={{
@@ -16,7 +18,7 @@ function Bottom({ navigation }) {
       <View style={styles.button}>
         <TouchableOpacity
           style={{ flexDirection: "row", justifyContent: "space-between" }}
-          onPress={() => this.props.navigation.navigate("DestinationScreen")}
+          onPress={() => navigation.navigate("DestinationScreen", { data: 1 })}
         >
           <Text style={styles.destination}>Destination 1</Text>
           <Text style={styles.price}>from 499</Text>
@@ -25,6 +27,7 @@ function Bottom({ navigation }) {
       <View style={styles.button}>
         <TouchableOpacity
           style={{ flexDirection: "row", justifyContent: "space-between" }}
+          onPress={() => navigation.navigate("DestinationScreen", { data: 2 })}
         >
           <Text style={styles.destination}>Destination 2</Text>
           <Text style={styles.price}>from 499</Text>
@@ -33,6 +36,7 @@ function Bottom({ navigation }) {
       <View style={styles.button}>
         <TouchableOpacity
           style={{ flexDirection: "row", justifyContent: "space-between" }}
+          onPress={() => navigation.navigate("DestinationScreen", { data: 3 })}
         >
           <Text style={styles.destination}>Destination 3</Text>
           <Text style={styles.price}>from 499</Text>
@@ -54,7 +58,7 @@ function Bottom({ navigation }) {
       />
     </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   headline: {
